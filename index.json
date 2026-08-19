@@ -11,7 +11,9 @@
           "version": "1.0.0",
           "displayName": "Outfit Linker",
           "description": "Automatically generates VRCFury toggles and links avatar outfits.",
-          "author": "rainywithin",
+          "author": {
+            "name": "rainywithin"
+          },
           "url": "https://github.com/URektMe/OutfitLinker/releases/download/v1.0.0/com.rainywithin.outfitlinker-1.0.0.zip",
           "dependencies": {
             "com.vrcfury.vrcfury": "^1.0.0"
