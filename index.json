@@ -18,6 +18,7 @@
           "dependencies": {
             "com.vrcfury.vrcfury": "^1.0.0"
           }
+        },
         "1.0.0": {
           "name": "com.rainywithin.outfitlinker",
           "version": "1.0.0",
