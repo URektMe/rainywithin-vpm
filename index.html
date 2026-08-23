@@ -9,19 +9,18 @@
     <meta name="keywords" content="VRChat, VCC, VPM, VRCFury, Outfit Linker, Unity tool, avatar customization, GitHub">
     <meta name="author" content="rainywithin">
     
-    <!-- Cute rounded font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-base: #ffe4ee;          /* Soft sakura blush */
-            --bg-grid: #ffd0e2;          /* Grid line pink */
-            --card-bg: #fffbfd;          /* Milky cloud white */
-            --border-color: #7a465c;     /* Deep berry brown border */
-            --text-main: #693b4e;        /* Dark rose reading text */
-            --accent-pink: #ff6b9d;      /* Astolfo hair pink */
-            --accent-purple: #e0b0ff;    /* Ribbon lilac */
-            --btn-blue: #bfe5ff;         /* Pastel sky blue */
+            --bg-top: #ffd6e7;
+            --bg-bottom: #ffeef6;
+            --card-bg: #fffcfd;
+            --border-color: #7a465c;
+            --text-main: #693b4e;
+            --accent-pink: #ff6b9d;
+            --accent-purple: #d896ff;
+            --btn-blue: #bfe5ff;
             --btn-blue-hover: #a8d9fc;
             --shadow-color: #5c3042;
         }
@@ -34,11 +33,7 @@
 
         body {
             font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
-            background-color: var(--bg-base);
-            background-image: 
-                linear-gradient(var(--bg-grid) 1.5px, transparent 1.5px),
-                linear-gradient(90deg, var(--bg-grid) 1.5px, transparent 1.5px);
-            background-size: 32px 32px;
+            background: linear-gradient(135deg, var(--bg-top) 0%, #fff0f7 50%, #f4dcff 100%);
             color: var(--text-main);
             display: flex;
             justify-content: center;
@@ -47,6 +42,19 @@
             padding: 20px;
             overflow-x: hidden;
             position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-image: radial-gradient(circle, rgba(255, 107, 157, 0.15) 2px, transparent 2.5px);
+            background-size: 36px 36px;
+            pointer-events: none;
+            z-index: 0;
         }
 
         .bg-decorations {
@@ -64,47 +72,98 @@
             position: absolute;
             bottom: -50px;
             user-select: none;
-            opacity: 0.6;
-            animation: floatUp 12s infinite linear;
+            animation: floatUp 14s infinite linear;
         }
 
-        .h1 { left: 8%; font-size: 2.2rem; animation-duration: 14s; animation-delay: 0s; color: var(--accent-pink); }
-        .h2 { left: 18%; font-size: 1.4rem; animation-duration: 9s; animation-delay: 3s; color: var(--accent-purple); }
-        .h3 { left: 28%; font-size: 1.8rem; animation-duration: 16s; animation-delay: 6s; color: var(--accent-pink); opacity: 0.45; }
-        .h4 { left: 72%; font-size: 2rem; animation-duration: 11s; animation-delay: 1s; color: var(--accent-pink); }
-        .h5 { left: 85%; font-size: 1.5rem; animation-duration: 15s; animation-delay: 4s; color: var(--accent-purple); }
-        .h6 { left: 92%; font-size: 2.4rem; animation-duration: 18s; animation-delay: 2s; color: var(--accent-pink); opacity: 0.4; }
-        .h7 { left: 45%; font-size: 1.2rem; animation-duration: 13s; animation-delay: 7s; color: var(--accent-pink); opacity: 0.35; }
-        .h8 { left: 60%; font-size: 1.6rem; animation-duration: 10s; animation-delay: 5s; color: var(--accent-purple); }
+        .h1 { left: 6%; font-size: 2.2rem; animation-duration: 13s; animation-delay: 0s; color: var(--accent-pink); }
+        .h2 { left: 16%; font-size: 1.5rem; animation-duration: 9s; animation-delay: 3s; color: var(--accent-purple); }
+        .h3 { left: 26%; font-size: 1.8rem; animation-duration: 16s; animation-delay: 6s; color: var(--accent-pink); opacity: 0.5; }
+        .h4 { left: 74%; font-size: 2.1rem; animation-duration: 11s; animation-delay: 1s; color: var(--accent-pink); }
+        .h5 { left: 84%; font-size: 1.6rem; animation-duration: 15s; animation-delay: 4s; color: var(--accent-purple); }
+        .h6 { left: 93%; font-size: 2.4rem; animation-duration: 18s; animation-delay: 2s; color: var(--accent-pink); opacity: 0.5; }
+        .h7 { left: 45%; font-size: 1.3rem; animation-duration: 12s; animation-delay: 7s; color: var(--accent-pink); opacity: 0.4; }
+        .h8 { left: 55%; font-size: 1.7rem; animation-duration: 10s; animation-delay: 5s; color: var(--accent-purple); }
 
         @keyframes floatUp {
-            0% {
-                transform: translateY(0) rotate(0deg) scale(0.8);
-                opacity: 0;
-            }
-            15% {
-                opacity: 0.65;
-            }
-            85% {
-                opacity: 0.65;
-            }
-            100% {
-                transform: translateY(-110vh) rotate(360deg) scale(1.1);
-                opacity: 0;
+            0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; }
+            15% { opacity: 0.7; }
+            85% { opacity: 0.7; }
+            100% { transform: translateY(-110vh) rotate(360deg) scale(1.15); opacity: 0; }
+        }
+
+        .side-sticker {
+            position: absolute;
+            z-index: 2;
+            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            user-select: none;
+        }
+
+        .side-sticker img {
+            max-width: 100%;
+            height: auto;
+            filter: drop-shadow(6px 6px 0px var(--border-color));
+            border-radius: 18px;
+            border: 3.5px solid var(--border-color);
+            background: #fff5fa;
+            padding: 6px;
+        }
+
+        .sticker-left {
+            left: max(3vw, 20px);
+            bottom: 8%;
+            width: clamp(140px, 18vw, 240px);
+            animation: swayLeft 4.5s ease-in-out infinite alternate;
+        }
+
+        .sticker-right {
+            right: max(3vw, 20px);
+            top: 10%;
+            width: clamp(130px, 17vw, 220px);
+            animation: swayRight 5s ease-in-out infinite alternate;
+        }
+
+        .side-badge {
+            margin-top: 10px;
+            background: #fff;
+            border: 2.5px solid var(--border-color);
+            border-radius: 12px;
+            padding: 4px 12px;
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: var(--text-main);
+            box-shadow: 3px 3px 0px var(--shadow-color);
+        }
+
+        @keyframes swayLeft {
+            0% { transform: translateY(0px) rotate(-3deg); }
+            100% { transform: translateY(-14px) rotate(2deg); }
+        }
+
+        @keyframes swayRight {
+            0% { transform: translateY(0px) rotate(4deg); }
+            100% { transform: translateY(-16px) rotate(-2deg); }
+        }
+
+        @media (max-width: 860px) {
+            .side-sticker {
+                display: none;
             }
         }
 
         .container {
             background-color: var(--card-bg);
             border: 3.5px solid var(--border-color);
-            border-radius: 20px;
+            border-radius: 22px;
             padding: 45px 35px 35px 35px;
             max-width: 480px;
             width: 100%;
             text-align: center;
             box-shadow: 10px 10px 0px var(--shadow-color);
             position: relative;
-            z-index: 2;
+            z-index: 3;
             animation: cardAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
@@ -136,8 +195,8 @@
             top: 10px;
             right: 18px;
             font-size: 0.75rem;
-            font-weight: 800;
-            background-color: var(--bg-base);
+            font-weight: 900;
+            background-color: #ffe6f2;
             border: 2px solid var(--border-color);
             border-radius: 12px;
             padding: 2px 10px;
@@ -222,6 +281,16 @@
         <div class="floating-item h6">♡</div>
         <div class="floating-item h7">✧</div>
         <div class="floating-item h8">🐾</div>
+    </div>
+
+    <div class="side-sticker sticker-left">
+        <img src="https://api.iconify.design/twemoji:sparkling-heart.svg" alt="Astolfo Heart Decor" style="padding: 20px; background: #fff0f6;" />
+        <div class="side-badge">✨ nyaa ~ ✨</div>
+    </div>
+
+    <div class="side-sticker sticker-right">
+        <img src="https://api.iconify.design/fluent-emoji:cat-with-wry-smile.svg" alt="Catboy Decor" style="padding: 20px; background: #fbeeff;" />
+        <div class="side-badge">💕 100% cute 💕</div>
     </div>
 
     <div class="container">
