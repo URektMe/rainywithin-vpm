@@ -63,6 +63,27 @@
           }
         }
       }
+    },
+    "com.rainywithin.optimizertools": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.rainywithin.optimizertools",
+          "version": "1.0.0",
+          "displayName": "Optimize Tools",
+          "description": "A set of tools for optimizing avatars because i was lazy.",
+          "author": {
+            "name": "rainywithin"
+          },
+          "url": "https://github.com/URektMe/Rainy-s-ToolBox/releases/download/v1.0.0/com.rainywithin.optimizertools-1.0.0.zip",
+          "dependencies": {
+            "d4rkpl4y3r.d4rkavataroptimizer": "^4.5.4",
+            "com.anatawa12.avatar-optimizer": "^1.9.0",
+            "de.thryrallo.vrc.avatar-performance-tools": "^1.0.0",
+            "com.vrcfury.vrcfury": "^1.0.0",
+            "com.ramtype0.meshia.mesh-simplification": "^3.2.0"
+          }
+        }
+      }
     }
   }
 }
