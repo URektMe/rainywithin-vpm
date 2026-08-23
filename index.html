@@ -3,34 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rainywithin VPM | VRChat Outfit Linker & Tools</title>
-    <meta name="description" content="A custom VRChat Creator Companion (VCC) repository hosting the Outfit Linker tool for automating VRCFury toggles.">
+    <title>Rainy's Tools 💕 | VPM Repository</title>
+    <meta name="description" content="A custom VRChat Creator Companion (VCC) repository hosting Rainy's optimization and outfit tools.">
     <meta name="google-site-verification" content="x9wSlCrrXfZPRBmylTZMBj1eefXqvXW0tgLQeOloKK0" />
     <meta name="keywords" content="VRChat, VCC, VPM, VRCFury, Outfit Linker, Unity tool, avatar customization, GitHub">
     <meta name="author" content="rainywithin">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: sans-serif; text-align: center; padding: 50px; background-color: #1e1e1e; color: white; }
+        :root {
+            --bg-color: #ffe6db;       
+            --grid-color: #f7d4c8;     
+            --card-bg: #fff5f2;        
+            --border-color: #a66a6a;   
+            --text-main: #8a5a5a;      
+            --btn-blue: #b9d6eb;       
+            --btn-blue-hover: #a1c6e0;
+            --btn-pink: #ffb6c1;       
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            background-image: 
+                linear-gradient(var(--grid-color) 2px, transparent 2px),
+                linear-gradient(90deg, var(--grid-color) 2px, transparent 2px);
+            background-size: 40px 40px;
+            color: var(--text-main);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--card-bg);
+            border: 3px solid var(--border-color);
+            border-radius: 16px;
+            padding: 45px 30px 30px 30px;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 8px 8px 0px var(--border-color);
+            position: relative;
+        }
+
+        .window-header {
+            position: absolute;
+            top: 12px;
+            left: 15px;
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+        }
+        .dot.pink { background-color: var(--btn-pink); }
+        .dot.blue { background-color: var(--btn-blue); }
+        .dot.white { background-color: #ffffff; }
+
+        h1 {
+            font-size: 2.2rem;
+            color: var(--border-color);
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+
+        .hearts {
+            color: var(--btn-pink);
+            font-size: 1.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 0px var(--border-color);
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
         .vcc-button {
             display: inline-block;
-            background-color: #0b5c5c;
-            color: white;
-            padding: 15px 25px;
+            background-color: var(--btn-blue);
+            color: var(--text-main);
+            padding: 15px 30px;
             text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            margin-top: 20px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border: 3px solid var(--border-color);
+            border-radius: 12px;
+            box-shadow: 4px 4px 0px var(--border-color);
+            transition: all 0.15s ease;
+            cursor: pointer;
         }
-        .vcc-button:hover { background-color: #0d7a7a; }
+
+        .vcc-button:hover {
+            background-color: var(--btn-blue-hover);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--border-color);
+        }
+
+        .vcc-button:active {
+            transform: translate(4px, 4px);
+            box-shadow: 0px 0px 0px var(--border-color);
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #b58b8b;
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
 
-    <h1>Rainywithin's VPM Repository</h1>
-    <p>Click the button below to add this repository to your Creator Companion.</p>
-    
-    <a class="vcc-button" href="vcc://vpm/addRepo?url=https://URektMe.github.io/rainywithin-vpm/index.json">
-        Add to VCC
-    </a>
+    <div class="container">
+        <div class="window-header">
+            <div class="dot pink"></div>
+            <div class="dot blue"></div>
+            <div class="dot white"></div>
+        </div>
+
+        <h1>Rainy's Tools</h1>
+        <div class="hearts">♡ ♡ ♡ ♡ ♡</div>
+        
+        <p>Welcome to my VPM repository! <br> Add this to VCC to get all my VRChat optimization tools, outfit linkers, and VRAM helpers. ( ˘ ³˘)♥</p>
+        
+        <a class="vcc-button" href="vcc://vpm/addRepo?url=https://URektMe.github.io/rainywithin-vpm/index.json">
+            ✨ Add to VCC ✨
+        </a>
+
+        <div class="footer">
+            made with ♡ by rainywithin
+        </div>
+    </div>
 
 </body>
 </html>
