@@ -9,18 +9,21 @@
     <meta name="keywords" content="VRChat, VCC, VPM, VRCFury, Outfit Linker, Unity tool, avatar customization, GitHub">
     <meta name="author" content="rainywithin">
     
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Cute rounded font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #ffe6db;       
-            --grid-color: #f7d4c8;     
-            --card-bg: #fff5f2;        
-            --border-color: #a66a6a;   
-            --text-main: #8a5a5a;      
-            --btn-blue: #b9d6eb;       
-            --btn-blue-hover: #a1c6e0;
-            --btn-pink: #ffb6c1;       
+            --bg-base: #ffe4ee;          /* Soft sakura blush */
+            --bg-grid: #ffd0e2;          /* Grid line pink */
+            --card-bg: #fffbfd;          /* Milky cloud white */
+            --border-color: #7a465c;     /* Deep berry brown border */
+            --text-main: #693b4e;        /* Dark rose reading text */
+            --accent-pink: #ff6b9d;      /* Astolfo hair pink */
+            --accent-purple: #e0b0ff;    /* Ribbon lilac */
+            --btn-blue: #bfe5ff;         /* Pastel sky blue */
+            --btn-blue-hover: #a8d9fc;
+            --shadow-color: #5c3042;
         }
 
         * {
@@ -31,115 +34,207 @@
 
         body {
             font-family: 'Nunito', 'Segoe UI', Tahoma, sans-serif;
-            background-color: var(--bg-color);
+            background-color: var(--bg-base);
             background-image: 
-                linear-gradient(var(--grid-color) 2px, transparent 2px),
-                linear-gradient(90deg, var(--grid-color) 2px, transparent 2px);
-            background-size: 40px 40px;
+                linear-gradient(var(--bg-grid) 1.5px, transparent 1.5px),
+                linear-gradient(90deg, var(--bg-grid) 1.5px, transparent 1.5px);
+            background-size: 32px 32px;
             color: var(--text-main);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             padding: 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .bg-decorations {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-item {
+            position: absolute;
+            bottom: -50px;
+            user-select: none;
+            opacity: 0.6;
+            animation: floatUp 12s infinite linear;
+        }
+
+        .h1 { left: 8%; font-size: 2.2rem; animation-duration: 14s; animation-delay: 0s; color: var(--accent-pink); }
+        .h2 { left: 18%; font-size: 1.4rem; animation-duration: 9s; animation-delay: 3s; color: var(--accent-purple); }
+        .h3 { left: 28%; font-size: 1.8rem; animation-duration: 16s; animation-delay: 6s; color: var(--accent-pink); opacity: 0.45; }
+        .h4 { left: 72%; font-size: 2rem; animation-duration: 11s; animation-delay: 1s; color: var(--accent-pink); }
+        .h5 { left: 85%; font-size: 1.5rem; animation-duration: 15s; animation-delay: 4s; color: var(--accent-purple); }
+        .h6 { left: 92%; font-size: 2.4rem; animation-duration: 18s; animation-delay: 2s; color: var(--accent-pink); opacity: 0.4; }
+        .h7 { left: 45%; font-size: 1.2rem; animation-duration: 13s; animation-delay: 7s; color: var(--accent-pink); opacity: 0.35; }
+        .h8 { left: 60%; font-size: 1.6rem; animation-duration: 10s; animation-delay: 5s; color: var(--accent-purple); }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg) scale(0.8);
+                opacity: 0;
+            }
+            15% {
+                opacity: 0.65;
+            }
+            85% {
+                opacity: 0.65;
+            }
+            100% {
+                transform: translateY(-110vh) rotate(360deg) scale(1.1);
+                opacity: 0;
+            }
         }
 
         .container {
             background-color: var(--card-bg);
-            border: 3px solid var(--border-color);
-            border-radius: 16px;
-            padding: 45px 30px 30px 30px;
-            max-width: 450px;
+            border: 3.5px solid var(--border-color);
+            border-radius: 20px;
+            padding: 45px 35px 35px 35px;
+            max-width: 480px;
+            width: 100%;
             text-align: center;
-            box-shadow: 8px 8px 0px var(--border-color);
+            box-shadow: 10px 10px 0px var(--shadow-color);
             position: relative;
+            z-index: 2;
+            animation: cardAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes cardAppear {
+            from { transform: scale(0.92); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
         }
 
         .window-header {
             position: absolute;
-            top: 12px;
-            left: 15px;
+            top: 14px;
+            left: 18px;
             display: flex;
-            gap: 6px;
+            gap: 7px;
         }
 
         .dot {
-            width: 14px;
-            height: 14px;
+            width: 13px;
+            height: 13px;
             border-radius: 50%;
             border: 2px solid var(--border-color);
         }
-        .dot.pink { background-color: var(--btn-pink); }
+        .dot.pink { background-color: var(--accent-pink); }
+        .dot.purple { background-color: var(--accent-purple); }
         .dot.blue { background-color: var(--btn-blue); }
-        .dot.white { background-color: #ffffff; }
+
+        .tag-pill {
+            position: absolute;
+            top: 10px;
+            right: 18px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            background-color: var(--bg-base);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2px 10px;
+            color: var(--text-main);
+        }
 
         h1 {
             font-size: 2.2rem;
             color: var(--border-color);
-            margin-bottom: 5px;
-            font-weight: 800;
+            margin-bottom: 4px;
+            font-weight: 900;
+            letter-spacing: -0.5px;
         }
 
-        .hearts {
-            color: var(--btn-pink);
-            font-size: 1.5rem;
-            letter-spacing: 4px;
-            margin-bottom: 15px;
+        .hearts-bar {
+            color: var(--accent-pink);
+            font-size: 1.3rem;
+            letter-spacing: 6px;
+            margin-bottom: 18px;
             text-shadow: 1px 1px 0px var(--border-color);
         }
 
         p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             line-height: 1.6;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
             font-weight: 600;
+            color: var(--text-main);
         }
 
         .vcc-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             background-color: var(--btn-blue);
-            color: var(--text-main);
-            padding: 15px 30px;
+            color: var(--border-color);
+            padding: 16px 32px;
             text-decoration: none;
-            font-weight: 800;
-            font-size: 1.2rem;
-            border: 3px solid var(--border-color);
-            border-radius: 12px;
+            font-weight: 900;
+            font-size: 1.15rem;
+            border: 3.5px solid var(--border-color);
+            border-radius: 14px;
             box-shadow: 4px 4px 0px var(--border-color);
-            transition: all 0.15s ease;
+            transition: all 0.12s ease-in-out;
             cursor: pointer;
+            width: 100%;
+            max-width: 320px;
         }
 
         .vcc-button:hover {
             background-color: var(--btn-blue-hover);
-            transform: translate(-2px, -2px);
-            box-shadow: 6px 6px 0px var(--border-color);
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0px var(--border-color);
         }
 
         .vcc-button:active {
-            transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0px var(--border-color);
+            transform: translate(3px, 3px);
+            box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .footer {
-            margin-top: 30px;
+            margin-top: 25px;
             font-size: 0.9rem;
-            color: #b58b8b;
-            font-weight: 600;
+            color: #9c6c80;
+            font-weight: 700;
+        }
+
+        .footer span {
+            color: var(--accent-pink);
         }
     </style>
 </head>
 <body>
 
+    <div class="bg-decorations">
+        <div class="floating-item h1">♡</div>
+        <div class="floating-item h2">✧</div>
+        <div class="floating-item h3">🐾</div>
+        <div class="floating-item h4">♡</div>
+        <div class="floating-item h5">✦</div>
+        <div class="floating-item h6">♡</div>
+        <div class="floating-item h7">✧</div>
+        <div class="floating-item h8">🐾</div>
+    </div>
+
     <div class="container">
         <div class="window-header">
             <div class="dot pink"></div>
+            <div class="dot purple"></div>
             <div class="dot blue"></div>
-            <div class="dot white"></div>
         </div>
 
+        <div class="tag-pill">v1.0.0</div>
+
         <h1>Rainy's Tools</h1>
-        <div class="hearts">♡ ♡ ♡ ♡ ♡</div>
+        <div class="hearts-bar">♡ ♡ ♡ ♡ ♡</div>
         
         <p>Welcome to my VPM repository! <br> Add this to VCC to get all my VRChat optimization tools, outfit linkers, and VRAM helpers. ( ˘ ³˘)♥</p>
         
@@ -148,7 +243,7 @@
         </a>
 
         <div class="footer">
-            made with ♡ by rainywithin
+            made with <span>♡</span> by rainywithin
         </div>
     </div>
 
