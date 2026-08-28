@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainy's Tools 💕 | VPM Repository</title>
-    <meta name="description" content="A custom VRChat Creator Companion (VCC) repository hosting Rainy's optimization and outfit tools.">
+    <meta name="description" content="A custom VRChat Creator Companion (VCC) repository hosting Rainy's optimization and outfit tools, including the Ultimate Optimizer, Outfit Linker, and Hair Linker for VRCFury.">
     <meta name="google-site-verification" content="x9wSlCrrXfZPRBmylTZMBj1eefXqvXW0tgLQeOloKK0" />
-    <meta name="keywords" content="VRChat, VCC, VPM, VRCFury, Outfit Linker, Unity tool, avatar customization, GitHub">
+    <meta name="keywords" content="VRChat, VCC, VPM, VRCFury, Outfit Linker, Hair Linker, Avatar Optimizer, Unity tool, AAO, d4rkAvatarOptimizer, avatar customization, GitHub">
     <meta name="author" content="rainywithin">
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
-    
+
     <style>
         :root {
             --bg-top: #ffd6e7;
@@ -39,7 +39,7 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 20px;
+            padding: 40px 20px;
             overflow-x: hidden;
             position: relative;
         }
@@ -92,7 +92,7 @@
         }
 
         .side-sticker {
-            position: absolute;
+            position: fixed;
             z-index: 2;
             pointer-events: none;
             display: flex;
@@ -147,7 +147,7 @@
             100% { transform: translateY(-16px) rotate(-2deg); }
         }
 
-        @media (max-width: 860px) {
+        @media (max-width: 950px) {
             .side-sticker {
                 display: none;
             }
@@ -158,7 +158,7 @@
             border: 3.5px solid var(--border-color);
             border-radius: 22px;
             padding: 45px 35px 35px 35px;
-            max-width: 480px;
+            max-width: 580px;
             width: 100%;
             text-align: center;
             box-shadow: 10px 10px 0px var(--shadow-color);
@@ -219,12 +219,69 @@
             text-shadow: 1px 1px 0px var(--border-color);
         }
 
-        p {
+        p.intro {
             font-size: 1.05rem;
             line-height: 1.6;
-            margin-bottom: 28px;
+            margin-bottom: 25px;
             font-weight: 600;
             color: var(--text-main);
+        }
+
+        /* NEW FEATURES SECTION FOR SEO */
+        .features-section {
+            margin: 25px 0;
+            text-align: left;
+            background: #fff5fa;
+            border: 2.5px dashed var(--accent-pink);
+            border-radius: 18px;
+            padding: 20px;
+        }
+        
+        .features-section h2 {
+            text-align: center;
+            font-size: 1.4rem;
+            color: var(--border-color);
+            margin-bottom: 18px;
+            font-weight: 900;
+        }
+
+        .feature-item {
+            margin-bottom: 15px;
+            background: #ffffff;
+            border: 2.5px solid var(--accent-purple);
+            border-radius: 14px;
+            padding: 16px;
+            box-shadow: 4px 4px 0px var(--btn-blue);
+            transition: transform 0.1s ease;
+        }
+
+        .feature-item:hover {
+            transform: scale(1.01);
+        }
+
+        .feature-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-item h3 {
+            color: var(--accent-pink);
+            margin-bottom: 8px;
+            font-size: 1.15rem;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+        
+        .feature-item strong {
+            color: var(--border-color);
         }
 
         .vcc-button {
@@ -235,6 +292,7 @@
             background-color: var(--btn-blue);
             color: var(--border-color);
             padding: 16px 32px;
+            margin-top: 15px;
             text-decoration: none;
             font-weight: 900;
             font-size: 1.15rem;
@@ -304,9 +362,24 @@
 
         <h1>Rainy's Tools</h1>
         <div class="hearts-bar">♡ ♡ ♡ ♡ ♡</div>
-        
-        <p>Welcome to my VPM repository! <br> Add this to VCC to get all my VRChat optimization tools, outfit linkers, and VRAM helpers. ( ˘ ³˘)♥</p>
-        
+
+        <p class="intro">Welcome to my VPM repository! <br> Add this to VCC to get all my VRChat optimization tools, outfit linkers, and VRAM helpers. ( ˘ ³˘)♥</p>
+
+        <!-- SEO Optimization & Feature Descriptions -->
+        <div class="features-section">
+            <h2>✨ What's Inside? ✨</h2>
+            
+            <div class="feature-item">
+                <h3>👗 Outfit & Hair Linker</h3>
+                <p>Automate your VRChat avatar setup! These Unity scripts use C# reflection to seamlessly integrate with <strong>VRCFury</strong>. Instantly map bones and link clothing, accessories, or hair meshes to your avatar, generating your VRCFury toggles and menu setups in seconds.</p>
+            </div>
+
+            <div class="feature-item">
+                <h3>🚀 Ultimate Optimizer</h3>
+                <p>Maximize your frame rate and reduce your avatar's VRAM usage. This tool suite properly configures <strong>AAO (Anatawa12's Avatar Optimizer)</strong> and <strong>d4rkAvatarOptimizer</strong> for advanced build-time optimizations. Use built-in polygon scanning, automated Meshia mesh simplification, and Write Defaults management to ensure your avatar performs perfectly without sacrificing visual quality.</p>
+            </div>
+        </div>
+
         <a class="vcc-button" href="vcc://vpm/addRepo?url=https://URektMe.github.io/rainywithin-vpm/index.json">
             ✨ Add to VCC ✨
         </a>
