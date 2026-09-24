@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rainy's Tools 💕 | VPM Repository</title>
-    <meta name="description" content="A custom VRChat Creator Companion (VCC) repository hosting Rainy's optimization and outfit tools, including the Ultimate Optimizer, Outfit Linker, and Hair Linker for VRCFury.">
+    <meta name="description" content="A custom VRChat Creator Companion (VCC) repository hosting Rainy's optimization and outfit tools, including Scene Auto-Save, Outfit Linker, and Ultimate Optimizer for VRCFury.">
     <meta name="google-site-verification" content="x9wSlCrrXfZPRBmylTZMBj1eefXqvXW0tgLQeOloKK0" />
-    <meta name="keywords" content="VRChat, VCC, VPM, VRCFury, Outfit Linker, Hair Linker, Avatar Optimizer, Unity tool, AAO, d4rkAvatarOptimizer, avatar customization, GitHub">
+    <meta name="keywords" content="VRChat, VCC, VPM, VRCFury, Outfit Linker, Hair Linker, Avatar Optimizer, Unity tool, Scene Auto-Save, AAO, d4rkAvatarOptimizer, avatar customization, GitHub">
     <meta name="author" content="rainywithin">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
 
     <style>
@@ -39,11 +41,12 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            padding: 40px 20px;
+            padding: 16px;
             overflow-x: hidden;
             position: relative;
         }
 
+        /* Subtle polka dot pattern */
         body::before {
             content: "";
             position: fixed;
@@ -75,14 +78,14 @@
             animation: floatUp 14s infinite linear;
         }
 
-        .h1 { left: 6%; font-size: 2.2rem; animation-duration: 13s; animation-delay: 0s; color: var(--accent-pink); }
-        .h2 { left: 16%; font-size: 1.5rem; animation-duration: 9s; animation-delay: 3s; color: var(--accent-purple); }
-        .h3 { left: 26%; font-size: 1.8rem; animation-duration: 16s; animation-delay: 6s; color: var(--accent-pink); opacity: 0.5; }
-        .h4 { left: 74%; font-size: 2.1rem; animation-duration: 11s; animation-delay: 1s; color: var(--accent-pink); }
-        .h5 { left: 84%; font-size: 1.6rem; animation-duration: 15s; animation-delay: 4s; color: var(--accent-purple); }
-        .h6 { left: 93%; font-size: 2.4rem; animation-duration: 18s; animation-delay: 2s; color: var(--accent-pink); opacity: 0.5; }
-        .h7 { left: 45%; font-size: 1.3rem; animation-duration: 12s; animation-delay: 7s; color: var(--accent-pink); opacity: 0.4; }
-        .h8 { left: 55%; font-size: 1.7rem; animation-duration: 10s; animation-delay: 5s; color: var(--accent-purple); }
+        .h1 { left: 5%; font-size: 2rem; animation-duration: 13s; animation-delay: 0s; color: var(--accent-pink); }
+        .h2 { left: 14%; font-size: 1.4rem; animation-duration: 9s; animation-delay: 3s; color: var(--accent-purple); }
+        .h3 { left: 24%; font-size: 1.6rem; animation-duration: 16s; animation-delay: 6s; color: var(--accent-pink); opacity: 0.5; }
+        .h4 { left: 76%; font-size: 1.9rem; animation-duration: 11s; animation-delay: 1s; color: var(--accent-pink); }
+        .h5 { left: 86%; font-size: 1.5rem; animation-duration: 15s; animation-delay: 4s; color: var(--accent-purple); }
+        .h6 { left: 94%; font-size: 2.2rem; animation-duration: 18s; animation-delay: 2s; color: var(--accent-pink); opacity: 0.5; }
+        .h7 { left: 45%; font-size: 1.2rem; animation-duration: 12s; animation-delay: 7s; color: var(--accent-pink); opacity: 0.4; }
+        .h8 { left: 58%; font-size: 1.5rem; animation-duration: 10s; animation-delay: 5s; color: var(--accent-purple); }
 
         @keyframes floatUp {
             0% { transform: translateY(0) rotate(0deg) scale(0.8); opacity: 0; }
@@ -104,50 +107,50 @@
         .side-sticker img {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(6px 6px 0px var(--border-color));
+            filter: drop-shadow(5px 5px 0px var(--border-color));
             border-radius: 18px;
-            border: 3.5px solid var(--border-color);
+            border: 3px solid var(--border-color);
             background: #fff5fa;
-            padding: 6px;
+            padding: 14px;
         }
 
         .sticker-left {
-            left: max(3vw, 20px);
-            bottom: 8%;
-            width: clamp(140px, 18vw, 240px);
+            left: max(2vw, 16px);
+            bottom: 6%;
+            width: clamp(110px, 14vw, 190px);
             animation: swayLeft 4.5s ease-in-out infinite alternate;
         }
 
         .sticker-right {
-            right: max(3vw, 20px);
-            top: 10%;
-            width: clamp(130px, 17vw, 220px);
+            right: max(2vw, 16px);
+            top: 6%;
+            width: clamp(100px, 13vw, 180px);
             animation: swayRight 5s ease-in-out infinite alternate;
         }
 
         .side-badge {
-            margin-top: 10px;
+            margin-top: 8px;
             background: #fff;
-            border: 2.5px solid var(--border-color);
+            border: 2px solid var(--border-color);
             border-radius: 12px;
-            padding: 4px 12px;
-            font-size: 0.85rem;
+            padding: 3px 10px;
+            font-size: 0.8rem;
             font-weight: 900;
             color: var(--text-main);
-            box-shadow: 3px 3px 0px var(--shadow-color);
+            box-shadow: 2px 2px 0px var(--shadow-color);
         }
 
         @keyframes swayLeft {
             0% { transform: translateY(0px) rotate(-3deg); }
-            100% { transform: translateY(-14px) rotate(2deg); }
+            100% { transform: translateY(-12px) rotate(2deg); }
         }
 
         @keyframes swayRight {
             0% { transform: translateY(0px) rotate(4deg); }
-            100% { transform: translateY(-16px) rotate(-2deg); }
+            100% { transform: translateY(-14px) rotate(-2deg); }
         }
 
-        @media (max-width: 950px) {
+        @media (max-width: 980px) {
             .side-sticker {
                 display: none;
             }
@@ -156,19 +159,19 @@
         .container {
             background-color: var(--card-bg);
             border: 3.5px solid var(--border-color);
-            border-radius: 22px;
-            padding: 45px 35px 35px 35px;
-            max-width: 580px;
+            border-radius: 24px;
+            padding: 24px 28px 20px 28px;
+            max-width: 620px;
             width: 100%;
             text-align: center;
-            box-shadow: 10px 10px 0px var(--shadow-color);
+            box-shadow: 8px 8px 0px var(--shadow-color);
             position: relative;
             z-index: 3;
-            animation: cardAppear 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: cardAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.2);
         }
 
         @keyframes cardAppear {
-            from { transform: scale(0.92); opacity: 0; }
+            from { transform: scale(0.95); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
 
@@ -177,12 +180,12 @@
             top: 14px;
             left: 18px;
             display: flex;
-            gap: 7px;
+            gap: 6px;
         }
 
         .dot {
-            width: 13px;
-            height: 13px;
+            width: 11px;
+            height: 11px;
             border-radius: 50%;
             border: 2px solid var(--border-color);
         }
@@ -192,96 +195,181 @@
 
         .tag-pill {
             position: absolute;
-            top: 10px;
+            top: 11px;
             right: 18px;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 900;
             background-color: #ffe6f2;
             border: 2px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2px 10px;
+            border-radius: 10px;
+            padding: 1px 8px;
             color: var(--text-main);
         }
 
         h1 {
-            font-size: 2.2rem;
+            font-size: 1.85rem;
             color: var(--border-color);
-            margin-bottom: 4px;
+            margin-top: 4px;
+            margin-bottom: 2px;
             font-weight: 900;
             letter-spacing: -0.5px;
         }
 
         .hearts-bar {
             color: var(--accent-pink);
-            font-size: 1.3rem;
-            letter-spacing: 6px;
-            margin-bottom: 18px;
+            font-size: 1.05rem;
+            letter-spacing: 5px;
+            margin-bottom: 8px;
             text-shadow: 1px 1px 0px var(--border-color);
         }
 
         p.intro {
-            font-size: 1.05rem;
-            line-height: 1.6;
-            margin-bottom: 25px;
+            font-size: 0.92rem;
+            line-height: 1.4;
+            margin-bottom: 14px;
             font-weight: 600;
             color: var(--text-main);
         }
 
-        /* NEW FEATURES SECTION FOR SEO */
         .features-section {
-            margin: 25px 0;
+            margin: 0 0 14px 0;
             text-align: left;
             background: #fff5fa;
-            border: 2.5px dashed var(--accent-pink);
-            border-radius: 18px;
-            padding: 20px;
+            border: 2px dashed var(--accent-pink);
+            border-radius: 16px;
+            padding: 12px 14px 10px 14px;
+            position: relative;
         }
-        
-        .features-section h2 {
-            text-align: center;
-            font-size: 1.4rem;
+
+        .features-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 0 4px;
+        }
+
+        .features-header h2 {
+            font-size: 1.15rem;
             color: var(--border-color);
-            margin-bottom: 18px;
             font-weight: 900;
         }
 
+        .carousel-nav-buttons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .nav-arrow {
+            background: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            width: 26px;
+            height: 26px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-weight: 900;
+            font-size: 0.85rem;
+            color: var(--border-color);
+            box-shadow: 2px 2px 0px var(--border-color);
+            transition: all 0.1s ease;
+            user-select: none;
+        }
+
+        .nav-arrow:hover {
+            background-color: var(--btn-blue);
+            transform: translate(-1px, -1px);
+            box-shadow: 3px 3px 0px var(--border-color);
+        }
+
+        .nav-arrow:active {
+            transform: translate(1px, 1px);
+            box-shadow: 0px 0px 0px var(--border-color);
+        }
+
+        .carousel-container {
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            padding: 4px 4px 8px 4px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        /* Custom Kawaii Scrollbar */
+        .carousel-container::-webkit-scrollbar {
+            height: 6px;
+        }
+        .carousel-container::-webkit-scrollbar-track {
+            background: #ffe3f0;
+            border-radius: 10px;
+        }
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: var(--accent-pink);
+            border-radius: 10px;
+        }
+
         .feature-item {
-            margin-bottom: 15px;
+            flex: 0 0 100%;
+            scroll-snap-align: start;
             background: #ffffff;
             border: 2.5px solid var(--accent-purple);
-            border-radius: 14px;
-            padding: 16px;
-            box-shadow: 4px 4px 0px var(--btn-blue);
+            border-radius: 12px;
+            padding: 12px 14px;
+            box-shadow: 3px 3px 0px var(--btn-blue);
             transition: transform 0.1s ease;
-        }
-
-        .feature-item:hover {
-            transform: scale(1.01);
-        }
-
-        .feature-item:last-child {
-            margin-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-height: 125px;
         }
 
         .feature-item h3 {
             color: var(--accent-pink);
-            margin-bottom: 8px;
-            font-size: 1.15rem;
+            margin-bottom: 5px;
+            font-size: 1.05rem;
             font-weight: 900;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 6px;
         }
 
         .feature-item p {
-            margin-bottom: 0;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            font-size: 0.84rem;
+            line-height: 1.4;
             font-weight: 600;
+            color: var(--text-main);
         }
-        
+
         .feature-item strong {
             color: var(--border-color);
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+        }
+
+        .dot-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #ffd0e3;
+            border: 1.5px solid var(--border-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dot-indicator.active {
+            background-color: var(--accent-pink);
+            width: 20px;
+            border-radius: 10px;
         }
 
         .vcc-button {
@@ -291,34 +379,34 @@
             gap: 8px;
             background-color: var(--btn-blue);
             color: var(--border-color);
-            padding: 16px 32px;
-            margin-top: 15px;
+            padding: 12px 28px;
+            margin-top: 4px;
             text-decoration: none;
             font-weight: 900;
-            font-size: 1.15rem;
-            border: 3.5px solid var(--border-color);
+            font-size: 1.05rem;
+            border: 3px solid var(--border-color);
             border-radius: 14px;
             box-shadow: 4px 4px 0px var(--border-color);
             transition: all 0.12s ease-in-out;
             cursor: pointer;
             width: 100%;
-            max-width: 320px;
+            max-width: 280px;
         }
 
         .vcc-button:hover {
             background-color: var(--btn-blue-hover);
-            transform: translate(-3px, -3px);
-            box-shadow: 7px 7px 0px var(--border-color);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--border-color);
         }
 
         .vcc-button:active {
-            transform: translate(3px, 3px);
+            transform: translate(2px, 2px);
             box-shadow: 1px 1px 0px var(--border-color);
         }
 
         .footer {
-            margin-top: 25px;
-            font-size: 0.9rem;
+            margin-top: 14px;
+            font-size: 0.8rem;
             color: #9c6c80;
             font-weight: 700;
         }
@@ -326,10 +414,43 @@
         .footer span {
             color: var(--accent-pink);
         }
+
+        /* Compact scaling for smaller screens */
+        @media (max-height: 720px) {
+            .container {
+                padding: 18px 22px 14px 22px;
+            }
+            h1 {
+                font-size: 1.5rem;
+            }
+            .hearts-bar {
+                margin-bottom: 4px;
+            }
+            p.intro {
+                font-size: 0.84rem;
+                margin-bottom: 8px;
+            }
+            .feature-item {
+                min-height: 115px;
+                padding: 10px 12px;
+            }
+            .features-section {
+                margin-bottom: 8px;
+                padding: 8px 10px;
+            }
+            .vcc-button {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+            .footer {
+                margin-top: 8px;
+            }
+        }
     </style>
 </head>
 <body>
 
+    <!-- Floating Background Particles -->
     <div class="bg-decorations">
         <div class="floating-item h1">♡</div>
         <div class="floating-item h2">✧</div>
@@ -341,16 +462,18 @@
         <div class="floating-item h8">🐾</div>
     </div>
 
+    <!-- Side Decoration Stickers -->
     <div class="side-sticker sticker-left">
-        <img src="https://api.iconify.design/twemoji:sparkling-heart.svg" alt="Astolfo Heart Decor" style="padding: 20px; background: #fff0f6;" />
+        <img src="https://api.iconify.design/twemoji:sparkling-heart.svg" alt="Astolfo Heart Decor" />
         <div class="side-badge">✨ nyaa ~ ✨</div>
     </div>
 
     <div class="side-sticker sticker-right">
-        <img src="https://api.iconify.design/fluent-emoji:cat-with-wry-smile.svg" alt="Catboy Decor" style="padding: 20px; background: #fbeeff;" />
+        <img src="https://api.iconify.design/fluent-emoji:cat-with-wry-smile.svg" alt="Catboy Decor" />
         <div class="side-badge">💕 meow ~ 💕</div>
     </div>
 
+    <!-- Main Window Container -->
     <div class="container">
         <div class="window-header">
             <div class="dot pink"></div>
@@ -363,27 +486,48 @@
         <h1>Rainy's Tools</h1>
         <div class="hearts-bar">♡ ♡ ♡ ♡ ♡</div>
 
-        <p class="intro">Welcome to my VPM repository! <br> Add this to VCC to get all my VRChat optimization tools, outfit linkers, and VRAM helpers. ( ˘ ³˘)♥</p>
+        <p class="intro">
+            Welcome to my VPM repository! Add this to VCC to get all my VRChat optimization tools, outfit linkers, and auto-save helpers. ( ˘ ³˘)♥
+        </p>
 
-        <!-- SEO Optimization & Feature Descriptions -->
         <div class="features-section">
-            <h2>✨ What's Inside? ✨</h2>
-            <div class="feature-item">
-                <h3>💾 Scene Auto-Save</h3>
-                <p>Never lose scene progress to a Unity crash again. Intercepts unsaved scene edits (like dropping in an avatar prefab) to force an immediate save dialog, then silently backs up dirty scenes in the background at custom intervals.</p>
-            </div>
-            
-            <div class="feature-item">
-                <h3>👗 Outfit & Hair Linker</h3>
-                <p>Automate your VRChat avatar setup! These Unity scripts use C# reflection to seamlessly integrate with <strong>VRCFury</strong>. Instantly map bones and link clothing, accessories, or hair meshes to your avatar, generating your VRCFury toggles and menu setups in seconds.</p>
+            <div class="features-header">
+                <h2>✨ What's Inside? ✨</h2>
+                <div class="carousel-nav-buttons">
+                    <button class="nav-arrow" id="prevBtn" title="Previous tool" aria-label="Previous tool">❮</button>
+                    <button class="nav-arrow" id="nextBtn" title="Next tool" aria-label="Next tool">❯</button>
+                </div>
             </div>
 
-            <div class="feature-item">
-                <h3>🚀 Ultimate Optimizer</h3>
-                <p>Maximize your frame rate and reduce your avatar's VRAM usage. This tool suite properly configures <strong>AAO (Anatawa12's Avatar Optimizer)</strong> and <strong>d4rkAvatarOptimizer</strong> for advanced build-time optimizations. Use built-in polygon scanning, automated Meshia mesh simplification, and Write Defaults management to ensure your avatar performs perfectly without sacrificing visual quality.</p>
+            <div class="carousel-container" id="carousel">
+                <!-- Card 1: Auto-Save -->
+                <div class="feature-item">
+                    <h3>💾 Scene Auto-Save</h3>
+                    <p>Never lose scene progress to a Unity crash again. Intercepts unsaved scene edits (like dropping in an avatar prefab) to force an immediate save dialog, then silently backs up dirty scenes at custom intervals.</p>
+                </div>
+
+                <!-- Card 2: Outfit Linker -->
+                <div class="feature-item">
+                    <h3>👗 Outfit &amp; Hair Linker</h3>
+                    <p>Automate your VRChat avatar setup! These Unity scripts use C# reflection to seamlessly integrate with <strong>VRCFury</strong>. Instantly map bones, link clothing, and setup hair accessories in seconds.</p>
+                </div>
+
+                <!-- Card 3: Ultimate Optimizer -->
+                <div class="feature-item">
+                    <h3>🚀 Ultimate Optimizer</h3>
+                    <p>Maximize FPS and cut avatar VRAM. Configures <strong>AAO (Avatar Optimizer)</strong> and <strong>d4rkAvatarOptimizer</strong> for automated Meshia decimation, draw-call reduction, and Write Defaults management.</p>
+                </div>
+            </div>
+
+            <!-- Dots Indicator -->
+            <div class="carousel-dots" id="dotsContainer">
+                <span class="dot-indicator active" data-index="0"></span>
+                <span class="dot-indicator" data-index="1"></span>
+                <span class="dot-indicator" data-index="2"></span>
             </div>
         </div>
 
+        <!-- Add to VCC Button -->
         <a class="vcc-button" href="vcc://vpm/addRepo?url=https://URektMe.github.io/rainywithin-vpm/index.json">
             ✨ Add to VCC ✨
         </a>
@@ -393,5 +537,57 @@
         </div>
     </div>
 
+    <script>
+        const carousel = document.getElementById('carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dots = document.querySelectorAll('.dot-indicator');
+        const items = document.querySelectorAll('.feature-item');
+
+        function updateDots() {
+            const scrollLeft = carousel.scrollLeft;
+            const itemWidth = items[0].offsetWidth + 12; // width + gap
+            const activeIndex = Math.round(scrollLeft / itemWidth);
+
+            dots.forEach((dot, index) => {
+                if (index === activeIndex) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+
+        carousel.addEventListener('scroll', updateDots);
+
+        function scrollToIndex(index) {
+            const itemWidth = items[0].offsetWidth + 12;
+            carousel.scrollTo({
+                left: index * itemWidth,
+                behavior: 'smooth'
+            });
+        }
+
+        prevBtn.addEventListener('click', () => {
+            const itemWidth = items[0].offsetWidth + 12;
+            const currentIndex = Math.round(carousel.scrollLeft / itemWidth);
+            const targetIndex = Math.max(0, currentIndex - 1);
+            scrollToIndex(targetIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const itemWidth = items[0].offsetWidth + 12;
+            const currentIndex = Math.round(carousel.scrollLeft / itemWidth);
+            const targetIndex = Math.min(items.length - 1, currentIndex + 1);
+            scrollToIndex(targetIndex);
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                const targetIndex = parseInt(dot.getAttribute('data-index'), 10);
+                scrollToIndex(targetIndex);
+            });
+        });
+    </script>
 </body>
 </html>
