@@ -3,6 +3,12 @@
   "id": "com.rainywithin.vpm",
   "url": "https://URektMe.github.io/rainywithin-vpm/index.json",
   "author": "rainywithin",
+  "vpmRepositories": [
+    "https://vpm.anatawa12.com/vpm.json",
+    "https://d4rkc0d3r.github.io/vpm-repos/main.json",
+    "https://vcc.vrcfury.com/",
+    "https://vpm.thry.dev/index.json"
+  ],
   "packages": {
     "com.rainywithin.outfitlinker": {
       "versions": {
