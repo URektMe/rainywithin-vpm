@@ -84,6 +84,23 @@
           }
         }
       }
+    },
+    "com.rainywithin.autosave": {
+      "versions": {
+        "1.0.0": {
+          "name": "com.rainywithin.autosave",
+          "version": "1.0.0",
+          "displayName": "Auto Save",
+          "description": "Automatically prompts to name unsaved Unity scenes when modified and auto-saves dirty scenes at configurable background intervals to prevent data loss.",
+          "author": {
+            "name": "rainywithin"
+          },
+          "url": "https://github.com/URektMe/AutoSave/releases/download/v1.0.0/com.rainywithin.autosave-1.0.0.zip",
+          "vpmDependencies": {
+            "com.vrcfury.vrcfury": "^1.0.0"
+          }
+        }
+      }
     }
   }
 }
