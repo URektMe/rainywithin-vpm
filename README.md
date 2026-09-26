@@ -16,3 +16,11 @@ Click the button below to automatically add this repository to your VCC:
   * **Poly Reducer:** Scans your avatar hierarchy and integrates with Meshia to safely decimate polygons and reduce overall mesh complexity.
   * **1-Click Optimizer:** Automatically configures d4rkAvatarOptimizer and Anatawa12's AvatarOptimizer (AAO) for maximum draw-call reduction, unused bone removal, and mesh merging.
   * **VRAM Evaluator:** A standalone scanner that calculates exact texture VRAM usage, recommends optimal bit-depth formats (like DXT1 vs BC7), and safely crunches textures to reduce download size using a JSON-backed backup system.
+
+### ⚠️ Prerequisites
+Before installing Optimizer Tools, you must add these repositories to your VCC:
+
+* [Add Anatawa12's Repository](vcc://vpm/addRepo?url=https://vpm.anatawa12.com/vpm.json)
+* [Add d4rkpl4y3r's Repository](vcc://vpm/addRepo?url=https://d4rkc0d3r.github.io/vpm-repos/main.json)
+* [Add VRCFury Repository](vcc://vpm/addRepo?url=https://vcc.vrcfury.com/)
+* [Add Thry's Repository](vcc://vpm/addRepo?url=https://vpm.thry.dev/index.json)
