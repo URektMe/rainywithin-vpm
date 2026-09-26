@@ -404,6 +404,50 @@
             box-shadow: 1px 1px 0px var(--border-color);
         }
 
+        /* NEW DEPENDENCIES SECTION STYLES */
+        .dependencies-section {
+            margin: 18px 0 4px 0;
+            background: #fdf5fc;
+            border: 2px dashed var(--accent-purple);
+            border-radius: 16px;
+            padding: 12px 14px;
+            text-align: center;
+        }
+
+        .dependencies-title {
+            font-size: 0.95rem;
+            color: var(--border-color);
+            margin-bottom: 8px;
+            font-weight: 900;
+        }
+
+        .deps-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            justify-content: center;
+        }
+
+        .dep-link {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--border-color);
+            background-color: #fff;
+            padding: 5px 10px;
+            border: 2px solid var(--accent-purple);
+            border-radius: 10px;
+            transition: all 0.15s ease;
+        }
+
+        .dep-link:hover {
+            background-color: var(--accent-purple);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 2px 2px 0px var(--border-color);
+        }
+
         .footer {
             margin-top: 14px;
             font-size: 0.8rem;
@@ -441,6 +485,10 @@
             .vcc-button {
                 padding: 10px 20px;
                 font-size: 0.95rem;
+            }
+            .dependencies-section {
+                margin-top: 12px;
+                padding: 10px;
             }
             .footer {
                 margin-top: 8px;
@@ -531,6 +579,17 @@
         <a class="vcc-button" href="vcc://vpm/addRepo?url=https://URektMe.github.io/rainywithin-vpm/index.json">
             ✨ Add to VCC ✨
         </a>
+
+        <!-- Prerequisites Section -->
+        <div class="dependencies-section">
+            <div class="dependencies-title">🎀 Make sure to download these! 🎀</div>
+            <div class="deps-grid">
+                <a href="https://vpm.anatawa12.com/add-repo" target="_blank" class="dep-link">Anatawa12's Repository</a>
+                <a href="https://github.com/d4rkc0d3r/d4rkAvatarOptimizer" target="_blank" class="dep-link">d4rkpl4y3r's Repository</a>
+                <a href="https://vrcfury.com/download" target="_blank" class="dep-link">VRCFury Repository</a>
+                <a href="https://vpm.thry.dev/" target="_blank" class="dep-link">Thry's Repository</a>
+            </div>
+        </div>
 
         <div class="footer">
             made with <span>♡</span> by rainywithin
