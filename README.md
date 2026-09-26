@@ -20,7 +20,7 @@ Click the button below to automatically add this repository to your VCC:
 ### ⚠️ Prerequisites
 Before installing Optimizer Tools, you must add these repositories to your VCC:
 
-* [Add Anatawa12's Repository](vcc://vpm/addRepo?url=https://vpm.anatawa12.com/vpm.json)
-* [Add d4rkpl4y3r's Repository](vcc://vpm/addRepo?url=https://d4rkc0d3r.github.io/vpm-repos/main.json)
-* [Add VRCFury Repository](vcc://vpm/addRepo?url=https://vcc.vrcfury.com/)
-* [Add Thry's Repository](vcc://vpm/addRepo?url=https://vpm.thry.dev/index.json)
+* [Add Anatawa12's Repository](https://vpm.anatawa12.com/add-repo)
+* [Add d4rkpl4y3r's Repository](https://github.com/d4rkc0d3r/d4rkAvatarOptimizer)
+* [Add VRCFury Repository](https://vrcfury.com/download)
+* [Add Thry's Repository](https://vpm.thry.dev/)
